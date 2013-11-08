@@ -174,7 +174,12 @@
 #define PHYS_SDRAM_1		CONFIG_SYS_SDRAM_BASE	/* SDRAM Bank #1	*/
 #define PHYS_SDRAM_1_SIZE	0x08000000	/* 128 MB in Bank #1	*/
 
-#define CONFIG_SYS_FLASH_BASE		0x10000000
+#define CONFIG_SYS_IRAM_BASE	0x0c000000	/* Internal SRAM base address */
+#define CONFIG_SYS_IRAM_SIZE	0x2000		/* 8 KB of internal SRAM memory */
+#define CONFIG_SYS_IRAM_END	(CONFIG_SYS_IRAM_BASE + CONFIG_SYS_IRAM_SIZE)
+#define CONFIG_SYS_INIT_SP_ADDR	(CONFIG_SYS_IRAM_END - GENERATED_GBL_DATA_SIZE)
+
+#define CONFIG_SYS_FLASH_BASE          0x10000000
 #define CONFIG_SYS_MONITOR_BASE	0x00000000
 
 /*-----------------------------------------------------------------------
